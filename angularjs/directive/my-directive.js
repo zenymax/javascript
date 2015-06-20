@@ -117,9 +117,6 @@ angular.module('myapp', []).directive('gridScreen', ['$http', function($http){
 				console.log("cols: ", cols);
 				console.log("rows: ", rows);
 			});
-			$scope.edit = function(row) {
-				console.log("edit row: ", row);
-			};
 		},
 		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
 		restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
@@ -153,6 +150,33 @@ angular.module('myapp', []).directive('gridScreen', ['$http', function($http){
 				title:'Edit',
 				field:''
 			});
+		}
+	};
+}]).directive('editorInitalizer', ['$http', function(){
+	// Runs during compile
+	return {
+		// name: '',
+		// priority: 1,
+		// terminal: true,
+		// scope: {}, // {} = isolate, true = child, false/undefined = no change
+		controller: function($scope, $element, $attrs, $transclude) {
+			$scope.edit = function(row) {
+				//console.log("edit row: ", row);
+				$scope.$broadcast('edit', row);
+			};
+		},
+		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+		restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
+		template: '<a href="" ng-click="edit(row)">&#9654;</a>',
+		// templateUrl: '',
+		// replace: true,
+		// transclude: true,
+		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+		link: function($scope, iElm, iAttrs, controller) {
+			$scope.$on('edit', function(e, row) {
+				console.log("row: ", row);
+			});
+			console.log("is linked");
 		}
 	};
 }]);
