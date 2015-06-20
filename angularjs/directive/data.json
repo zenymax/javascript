@@ -1,0 +1,19 @@
+{
+	"data": [
+		{
+			"product":"Mouse",
+			"description": "Mouse computer",
+			"cost":"5$"
+		},
+		{
+			"product":"Keyboard",
+			"description": "key bot",
+			"cost":"10$"
+		},
+		{
+			"product":"CPU",
+			"description": "cai phu ung",
+			"cost":"200$"
+		}
+	]
+}

@@ -7,7 +7,7 @@
     <script type="text/javascript" src="my-directive.js"></script>
 </head>
 
-<body>
+<body ng-app="myapp">
     <h1>Advanced AngularJS Directive</h1>
     <pre>
 	&lt;grid-screen resource=&quot;/api/data.js&quot;&gt;
@@ -19,7 +19,8 @@
 	  &lt;grid with-inline-editor&gt;&lt;/grid&gt;
 	&lt;/grid-screen&gt;
   	</pre>
-    <grid-screen resource="data.js">
+
+    <grid-screen resource="data.json">
         <grid-columns>
             <grid-column title="Product" field="product" />
             <grid-column title="Description" field="description" />
