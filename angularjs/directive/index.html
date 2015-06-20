@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript" src="../angular-1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="angular-module.js"></script>
+    <script type="text/javascript" src="my-directive.js"></script>
+</head>
+
+<body>
+    <h1>Advanced AngularJS Directive</h1>
+    <pre>
+	&lt;grid-screen resource=&quot;/api/data.js&quot;&gt;
+	  &lt;grid-columns&gt;
+	    &lt;grid-column title=&quot;Product&quot; field=&quot;product&quot; /&gt;
+	    &lt;grid-column title=&quot;Description&quot; field=&quot;description&quot; /&gt;
+	    &lt;grid-column title=&quot;Cost&quot; field=&quot;cost&quot; /&gt;
+	  &lt;/grid-columns&gt;
+	  &lt;grid with-inline-editor&gt;&lt;/grid&gt;
+	&lt;/grid-screen&gt;
+  	</pre>
+    <grid-screen resource="data.js">
+        <grid-columns>
+            <grid-column title="Product" field="product" />
+            <grid-column title="Description" field="description" />
+            <grid-column title="Cost" field="cost" />
+        </grid-columns>
+        <grid with-inline-editor></grid>
+    </grid-screen>
+</body>
+
+</html>
